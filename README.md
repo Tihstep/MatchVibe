@@ -1,4 +1,4 @@
 ## MatchVibe
 Test your mate vibe!
 
-![Match Vibe](figures/MatchVibe_big)
+![Match Vibe](figures/MatchVibe_big.png)
