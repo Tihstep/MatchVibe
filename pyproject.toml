@@ -7,6 +7,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+uvicorn = "^0.34.0"
+fastapi = "^0.115.6"
+pillow = "^11.0.0"
+numpy = "^2.2.1"
+torchvision = "^0.20.1"
+pyyaml = "^6.0.2"
+loguru = "^0.7.3"
+python-multipart = "^0.0.20"
 
 
 [build-system]

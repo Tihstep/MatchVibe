@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matchvibe</title>
+  <link rel="stylesheet" href="frontend/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="frontend/static/images/MatchVibe_medium.jpg" alt="Matchvibe Logo" class="logo">
+            </div>
+            <nav class="header-nav">
+                <a href="#profile">Мой профиль</a>
+                <a href="#search">Референсы</a>
+                <a href="#messages">Сообщения</a>
+                <a href="#settings">Настройки</a>
+                <a href="#about">О проекте</a>
+            </nav>
+            <div class="header-actions">
+              <a href="#login" class="btn">Войти</a>
+              <a href="#register" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+      <main>
+        <section>
+          <h2>Как она видит его</h2>
+          <div class="grid">
+            <div class="box" data-background="url(frontend/static/images/1.jpg)"><div class="box-text">Животное</div></div>
+            <div class="box" data-background="url(frontend/static/images/2.jpg)"><div class="box-text">Пейзаж</div></div>
+            <div class="box" data-background="url(frontend/static/images/3.jpg)"><div class="box-text">Еда</div></div>
+            <div class="box" data-background="url(frontend/static/images/4.jpg)"><div class="box-text">Цветок</div></div>
+          </div>
+        </section>
+        <section>
+          <h2>Как он видит её</h2>
+          <div class="grid">
+            <div class="box" data-background="url(frontend/static/images/5.jpg)"><div class="box-text">Животное</div></div>
+            <div class="box" data-background="url(frontend/static/images/6.jpg)"><div class="box-text">Пейзаж</div></div>
+            <div class="box" data-background="url(frontend/static/images/7.jpg)"><div class="box-text">Еда</div></div>
+            <div class="box" data-background="url(frontend/static/images/8.jpg)"><div class="box-text">Цветок</div></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <p>Matchvibe делаем мир ближе.</p>
+          <div>&copy; 2025 Matchvibe. Создано с ❤️ для вас.</div>
+        </div>
+        <div class="footer-section">
+            <img src="frontend/static/images/MatchVibe_medium.jpg" alt="Matchvibe Logo" class="footer-logo">
+        </div>
+        <div class="footer-section">
+          <h4>Контакты</h4>
+            <a href="https://github.com/Tihstep"><img src="frontend/static/images/github.png" alt="Github Logo" class="contact-logo"></a>
+            <a href="https://t.me/Tihstep"><img src="frontend/static/images/telegram.png" alt="Telegram Logo" class="contact-logo"></a>
+            <a href="https://www.linkedin.com/in/tihstepds/"><img src="frontend/static/images/linkedin.png" alt="Linkedin Logo" class="contact-logo"></a>
+            <a href="mailto:vlad@webref.ru"><img src="frontend/static/images/gmail.png" alt="Gmail Logo" class="contact-logo"></a>
+        </div>
+      </div>
+    </footer>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => {
+      const backgroundUrl = box.getAttribute('data-background');
+      if (backgroundUrl) {
+        box.style.backgroundImage = backgroundUrl;
+      }
+    });
+  });
+</script>
+</body>
+</html>

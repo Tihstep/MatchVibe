@@ -1,0 +1,171 @@
+/* Общие стили */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #e9ccfc;
+  color: #561291;
+  padding: 0px 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.header-nav {
+  display: flex;
+  gap: 40px;
+  flex-grow: 1;
+  justify-content: start; /* Выровнять навигацию по центру */
+  margin: auto 30px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #4a1772;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 1.1em;
+}
+
+.header-nav a:hover {
+  color: #9c4dff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #561291;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #9c4dff;
+}
+
+.btn {
+  background-color: #e9ccfc;
+  color: #561291;
+}
+
+.btn:hover {
+  background-color: #f4e1ff;
+}
+
+footer {
+  background-color: #e9ccfc;
+  color: #561291;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  max-width: 400px;
+}
+
+.footer-logo {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  left: -35%
+}
+
+.contact-logo {
+  margin: -10px 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.container {
+  display: flex;
+  min-height: 77vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 5em;
+}
+
+section {
+  margin: 0 1em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 250px); /* 2 колонки по 250px */
+  grid-gap: 20px;
+}
+
+.box {
+  position: relative; /* Создаем контекст для абсолютного позиционирования */
+  width: 250px;
+  height: 250px;
+  opacity: 0.3;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.5s ease; /* Плавный переход */
+}
+
+.box:hover {
+  opacity: 1.0;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  border: 0px solid black;
+}
+
+.box .box-text {
+  position: absolute; /* Абсолютное позиционирование внутри .box */
+  top: 10px; /* Отступ сверху */
+  left: 50%; /* Центровка по горизонтали */
+  transform: translateX(-50%); /* Коррекция для центровки */
+  color: #fff; /* Белый цвет текста */
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  padding: 5px 10px; /* Отступы внутри текста */
+  border-radius: 5px; /* Закругленные углы */
+  font-size: 16px; /* Размер шрифта */
+  opacity: 0;
+}
