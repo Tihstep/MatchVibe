@@ -24,8 +24,8 @@ header {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5hv;
 }
 
 .header-nav {
@@ -82,7 +82,7 @@ header {
 footer {
   background-color: #e9ccfc;
   color: #561291;
-  padding: 1em 0;
+  padding: 0.5em 0;
   text-align: center;
 }
 
@@ -98,21 +98,21 @@ footer {
 }
 
 .footer-logo {
-  width: 120px;
-  height: 120px;
+  width: 5vw;
+  height: 5hv;
   position: relative;
   left: -35%
 }
 
 .contact-logo {
-  margin: -10px 10px;
-  width: 30px;
-  height: 30px;
+  margin: auto 10px;
+  width: 1.5vw;
+  height: 1.5hv;
 }
 
 .container {
   display: flex;
-  min-height: 77vh;
+  min-height: 78vh;
 }
 
 main {
@@ -120,23 +120,28 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 5em;
+  padding: 3em;
 }
 
 section {
   margin: 0 1em;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 250px); /* 2 колонки по 250px */
+  grid-template-columns: repeat(2, 14vw); /* 2 колонки по 250px */
   grid-gap: 20px;
 }
 
 .box {
   position: relative; /* Создаем контекст для абсолютного позиционирования */
-  width: 250px;
-  height: 250px;
+  width: 14vw;
+  height: 24vh;
   opacity: 0.3;
   text-align: center;
   display: flex;
@@ -149,6 +154,7 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   transition: opacity 0.5s ease; /* Плавный переход */
+  cursor: pointer; /* Указываем, что область кликабельна */
 }
 
 .box:hover {
@@ -168,4 +174,8 @@ section {
   border-radius: 5px; /* Закругленные углы */
   font-size: 16px; /* Размер шрифта */
   opacity: 0;
+}
+
+.image-upload {
+  display: none; /* Полностью скрываем input */
 }
