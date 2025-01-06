@@ -1,0 +1,215 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #e9ccfc;
+  color: #561291;
+  padding: 0px 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 10vh; /* Примерно 10% высоты экрана */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 5vw;
+  height: 5hv;
+}
+
+.header-nav {
+  display: flex;
+  gap: 40px;
+  flex-grow: 1;
+  justify-content: start; /* Выровнять навигацию по центру */
+  margin: auto 30px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #4a1772;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 1.1em;
+}
+
+.header-nav a:hover {
+  color: #9c4dff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #561291;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #9c4dff;
+}
+
+.btn {
+  background-color: #e9ccfc;
+  color: #561291;
+}
+
+.btn:hover {
+  background-color: #f4e1ff;
+}
+
+footer {
+  background-color: #e9ccfc;
+  color: #561291;
+  padding: 0.5em 0;
+  text-align: center;
+  height: 10vh; /* Примерно 10% высоты экрана */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  max-width: 400px;
+}
+
+.footer-logo {
+  width: 5vw;
+  height: 5hv;
+  position: relative;
+  left: -35%
+}
+
+.contact-logo {
+  margin: 0px 10px;
+  width: 1.5vw;
+  height: 1.5hv;
+}
+
+.container {
+  display: flex;
+  height: 60vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 3em;
+}
+
+section {
+  margin: 0 1em;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.about-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow-y: auto; /* Если контента слишком много, добавляем прокрутку */
+}
+
+.about-section h2 {
+  font-size: 1.5em;
+  margin: 30px 0 15px;
+  color: #444; /* Насыщенный цвет для подзаголовков */
+}
+
+/* Параграфы */
+.about-section p {
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  text-align: justify;
+  max-width: 350px;
+}
+
+/* Стили для списка */
+.about-section ul, 
+.about-section ol {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.about-section ul li, 
+.about-section ol li {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* Упорядоченные списки */
+.about-section ol li {
+  list-style-type: decimal;
+}
+
+/* Неупорядоченные списки */
+.about-section ul li {
+  list-style-type: disc;
+}
+
+/* Ссылки */
+.about-section a {
+  color: #007BFF; /* Синий цвет для ссылок */
+  text-decoration: none;
+}
+
+.about-section a:hover {
+  text-decoration: underline;
+}
+
+.column {
+  max-width: 450px;
+  margin: 0 20px;
+}
+
+.bold {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.match{
+    font-weight: bold;
+    color: #561291; /* Насыщенный цвет для подзаголовков */
+    
+}
+
+html {
+  height: 100%;
+}

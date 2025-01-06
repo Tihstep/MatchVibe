@@ -4,7 +4,6 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from PIL import Image
-import numpy as np
 import torch
 from loguru import logger
 from matchvibe.ml.model import load_model, load_transform
@@ -13,11 +12,18 @@ model = None
 transform = None
 app = FastAPI()
 
-# Подключаем папку static для статических файлов
-app.mount("/frontend/static", StaticFiles(directory="frontend/static"), name="static")
+# Подключаем папку frontend для статических файлов
+app.mount(
+    "/matchvibe/app/frontend/",
+    StaticFiles(directory="matchvibe/app/frontend/"),
+    name="frontend",
+)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://0.0.0.0:8080", "http://127.0.0.1:8080"],  # Укажите домены вашего фронтенда
+    allow_origins=[
+        "http://0.0.0.0:8080",
+        "http://127.0.0.1:8080",
+    ],  # Укажите домены вашего фронтенда
     allow_credentials=True,
     allow_methods=["*"],  # Разрешить все методы (GET, POST, PUT и т.д.)
     allow_headers=["*"],  # Разрешить все заголовки
@@ -28,12 +34,6 @@ class SimilarityResponse(BaseModel):
     similarity_score: float
 
 
-@app.get("/")
-def serve_homepage():
-    """Возвращает HTML-файл при переходе на корневой URL."""
-    return FileResponse("frontend/static/index.html")
-
-
 @app.on_event("startup")
 def startup_event():
     global model
@@ -42,11 +42,41 @@ def startup_event():
     transform = load_transform()
 
 
+@app.get("/")
+def serve_homepage():
+    """Возвращает HTML-файл при переходе на корневой URL."""
+    return FileResponse("matchvibe/app/frontend/index.html")
+
+
+@app.get("/about.html")
+def serve_about():
+    """Возвращает HTML-файл при переходе на корневой URL."""
+    return FileResponse("matchvibe/app/frontend/about.html")
+
+
+@app.get("/profile.html")
+def serve_profile():
+    """Возвращает HTML-файл при переходе на корневой URL."""
+    return FileResponse("matchvibe/app/frontend/profile.html")
+
+
+@app.get("/references.html")
+def serve_references():
+    """Возвращает HTML-файл при переходе на корневой URL."""
+    return FileResponse("matchvibe/app/frontend/references.html")
+
+
+@app.get("/settings.html")
+def serve_settings():
+    """Возвращает HTML-файл при переходе на корневой URL."""
+    return FileResponse("matchvibe/app/frontend/settings.html")
+
+
 @app.post("/compare-images", response_model=SimilarityResponse)
 async def compare_images(file1: UploadFile = File(...), file2: UploadFile = File(...)):
     try:
         logger.info("Received request to compare images.")
-        
+
         # Load and preprocess images
         image1 = Image.open(file1.file).convert("RGB")
         image2 = Image.open(file2.file).convert("RGB")
@@ -75,6 +105,6 @@ def calculate_similarity(embedding1, embedding2):
     """Calculate cosine similarity between two embeddings."""
     embedding1 = torch.tensor(embedding1).float()
     embedding2 = torch.tensor(embedding2).float()
-    
+
     cos = torch.nn.functional.cosine_similarity(embedding1, embedding2)
     return cos.item()
