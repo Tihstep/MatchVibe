@@ -4,50 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Профиль - Matchvibe</title>
-  <link rel="stylesheet" href="frontend/static/css/profile.css">
+  <link rel="stylesheet" href="matchvibe/app/frontend/css/profile.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <a href="/"><img src="frontend/static/images/MatchVibe_medium.jpg" alt="Matchvibe Logo" class="logo"></a>
-            </div>
-            <nav class="header-nav">
-                <a href="profile.html">Мой профиль</a>
-                <a href="references.html">Референсы</a>
-                <a href="#messages">Сообщения</a>
-                <a href="settings.html">Настройки</a>
-                <a href="about.html">О проекте</a>
-            </nav>
-            <div class="header-actions">
-              <a href="#login" class="btn">Войти</a>
-              <a href="#register" class="btn btn-primary">Регистрация</a>
-            </div>
-        </div>
-    </header>
+    <div id="header"></div>
     <main>
 
     <h1>Профиль</h1>
         
     </main>
+    <div id="footer"></div>
+<script>
+  fetch('matchvibe/app/frontend/header.html')
+    .then(response => response.text())
+    .then(html => document.getElementById('header').innerHTML = html);
 
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <p>Matchvibe делаем мир ближе. 🌍</p>
-          <div>&copy; 2025 Matchvibe. Создано с ❤️ для вас.</div>
-        </div>
-        <div class="footer-section">
-            <a href="/"><img src="frontend/static/images/MatchVibe_medium.jpg" alt="Matchvibe Logo" class="footer-logo"></a>
-        </div>
-        <div class="footer-section">
-          <h4>Контакты</h4>
-            <a href="https://github.com/Tihstep"><img src="frontend/static/images/github.png" alt="Github Logo" class="contact-logo"></a>
-            <a href="https://t.me/Tihstep"><img src="frontend/static/images/telegram.png" alt="Telegram Logo" class="contact-logo"></a>
-            <a href="https://www.linkedin.com/in/tihstepds/"><img src="frontend/static/images/linkedin.png" alt="Linkedin Logo" class="contact-logo"></a>
-            <a href="mailto:TihstepML@gmail.com"><img src="frontend/static/images/gmail.png" alt="Gmail Logo" class="contact-logo"></a>
-        </div>
-      </div>
-    </footer>
+  fetch('matchvibe/app/frontend/footer.html')
+    .then(response => response.text())
+    .then(html => document.getElementById('footer').innerHTML = html);
+</script>    
 </body>
 </html>

@@ -7,6 +7,8 @@ from PIL import Image
 import torch
 from loguru import logger
 from matchvibe.ml.model import load_model, load_transform
+from matchvibe.app.database import create_db_and_tables
+from matchvibe.app.users.router import router as router_students
 
 model = None
 transform = None
@@ -33,6 +35,10 @@ def startup_event():
     global transform
     model = load_model()
     transform = load_transform()
+    create_db_and_tables()
+
+
+app.include_router(router_students)
 
 
 @app.get('/')
@@ -41,25 +47,25 @@ def serve_homepage():
     return FileResponse('matchvibe/app/frontend/index.html')
 
 
-@app.get('/about.html')
+@app.get('/about')
 def serve_about():
     """Возвращает HTML-файл при переходе на корневой URL."""
     return FileResponse('matchvibe/app/frontend/about.html')
 
 
-@app.get('/profile.html')
+@app.get('/profile')
 def serve_profile():
     """Возвращает HTML-файл при переходе на корневой URL."""
     return FileResponse('matchvibe/app/frontend/profile.html')
 
 
-@app.get('/references.html')
+@app.get('/references')
 def serve_references():
     """Возвращает HTML-файл при переходе на корневой URL."""
     return FileResponse('matchvibe/app/frontend/references.html')
 
 
-@app.get('/settings.html')
+@app.get('/settings')
 def serve_settings():
     """Возвращает HTML-файл при переходе на корневой URL."""
     return FileResponse('matchvibe/app/frontend/settings.html')
